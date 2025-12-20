@@ -151,11 +151,7 @@ out_reg : std_logic;
 
 ### Range = 0 (kHz Mode)
 
-<!-- Place simulation image for range = 0 here -->
-
-<!-- Example:
-![Simulation - kHz Range](sim_khz.png)
--->
+![Simulation - kHz Range](images/range_sel=0.png)
 
 This simulation shows the **8 frequency levels** generated when `range = 0`.
 
@@ -163,11 +159,7 @@ This simulation shows the **8 frequency levels** generated when `range = 0`.
 
 ### Range = 1 (Hz Mode)
 
-<!-- Place simulation image for range = 1 here -->
-
-<!-- Example:
-![Simulation - Hz Range](sim_hz.png)
--->
+![Simulation - kHz Range](images/range_sel=1.png)
 
 This simulation shows the **8 frequency levels** generated when `range = 1`.
 
