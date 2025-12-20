@@ -207,5 +207,3 @@ This simulation shows the **8 frequency levels** generated when `range = 1`.
 
 * **Quartus Prime**
 * **ModelSim**
-
-```
