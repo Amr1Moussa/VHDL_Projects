@@ -1,6 +1,7 @@
 # Digital Square Wave VCO (VHDL)
 
 ![Digital VCO Block Diagram](images/Schematic.jpeg)
+
 ---
 
 ## Overview
@@ -16,10 +17,10 @@ The design is fully synchronous and suitable for FPGA implementation.
 
 ```vhdl
 PORT (
-    clk          : in  std_logic;              -- 1 MHz clock
+    clk          : in  std_logic;               -- 1 MHz clock
     control_freq : in  std_logic_vector(2 downto 0); -- Frequency selection
-    range        : in  std_logic;              -- 0: kHz, 1: Hz
-    vco_out      : out std_logic               -- Square wave output
+    range        : in  std_logic;               -- 0: kHz, 1: Hz
+    vco_out      : out std_logic                -- Square wave output
 );
 ````
 
@@ -70,6 +71,43 @@ N = 2^(control_freq) × (1 or 1000)
 
 ---
 
+## VCO Frequency Selection Table
+
+*(1 MHz Input Clock Assumed)*
+
+| Row | control_freq | range_sel | N (decimal) | vco_out Frequency | Notes                          |
+| --- | ------------ | --------- | ----------- | ----------------- | ------------------------------ |
+| 1   | "000"        | '0'       | 1           | 500 kHz           | Highest frequency (low range)  |
+| 2   | "001"        | '0'       | 2           | 250 kHz           |                                |
+| 3   | "010"        | '0'       | 4           | 125 kHz           |                                |
+| 4   | "011"        | '0'       | 8           | 62.5 kHz          |                                |
+| 5   | "100"        | '0'       | 16          | 31.25 kHz         |                                |
+| 6   | "101"        | '0'       | 32          | 15.625 kHz        |                                |
+| 7   | "110"        | '0'       | 64          | 7.8125 kHz        |                                |
+| 8   | "111"        | '0'       | 128         | 3.90625 kHz       | Lowest frequency (low range)   |
+| 9   | "000"        | '1'       | 1000        | 500 Hz            | Highest frequency (high range) |
+| 10  | "001"        | '1'       | 2000        | 250 Hz            |                                |
+| 11  | "010"        | '1'       | 4000        | 125 Hz            |                                |
+| 12  | "011"        | '1'       | 8000        | 62.5 Hz           |                                |
+| 13  | "100"        | '1'       | 16000       | 31.25 Hz          |                                |
+| 14  | "101"        | '1'       | 32000       | 15.625 Hz         |                                |
+| 15  | "110"        | '1'       | 64000       | 7.8125 Hz         |                                |
+| 16  | "111"        | '1'       | 128000      | 3.90625 Hz        | Lowest frequency overall       |
+
+**Notes:**
+
+* Assumes a **1 MHz input clock** (`clk`)
+* Output frequency:
+
+  ```
+  f_vco_out = 1,000,000 / (2 × N)
+  ```
+* `vco_out` is a **50% duty-cycle square wave**
+* Rows 1–8 → `range_sel = '0'` (kHz range)
+* Rows 9–16 → `range_sel = '1'` (Hz range)
+
+---
+
 ### Block 2: Counter
 
 #### Purpose
@@ -79,7 +117,7 @@ Count clock cycles until reaching **N**.
 #### Operation
 
 * Clocked by `clk`
-* Counts from `0` → `N − 1`
+* Counts from `0 → N − 1`
 * When count reaches `N − 1`:
 
   * Counter resets to zero
@@ -159,7 +197,7 @@ This simulation shows the **8 frequency levels** generated when `range = 0`.
 
 ### Range = 1 (Hz Mode)
 
-![Simulation - kHz Range](images/range_sel=1.png)
+![Simulation - Hz Range](images/range_sel=1.png)
 
 This simulation shows the **8 frequency levels** generated when `range = 1`.
 
@@ -170,4 +208,4 @@ This simulation shows the **8 frequency levels** generated when `range = 1`.
 * **Quartus Prime**
 * **ModelSim**
 
----
+```
