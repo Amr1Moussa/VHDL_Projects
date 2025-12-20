@@ -182,6 +182,25 @@ unsigned(16 downto 0)
 ```vhdl
 out_reg : std_logic;
 ```
+---
+---
+
+## RTL Viewer (Register Transfer Level)
+
+The RTL viewer illustrates the synthesized hardware structure of the Digital VCO.
+It confirms that the design is implemented using a **counter**, **combinational
+frequency selection logic**, and a **toggle flip-flop**, all driven by a single
+clock domain.
+
+![RTL Viewer](images/rtl.png)
+
+### RTL Observations
+- Fully synchronous design driven by `clk`
+- Frequency selection logic implemented as combinational logic
+- Counter used as a programmable clock divider
+- Toggle flip-flop ensures a 50% duty-cycle output
+- No inferred latches
+- Suitable for CPLD/FPGA implementation
 
 ---
 
