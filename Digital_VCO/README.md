@@ -51,13 +51,13 @@ The VCO is divided into **three main blocks**:
 
 ---
 
-## Block 1: Frequency Selector
+### Block 1: Frequency Selector
 
-### Purpose
+#### Purpose
 
 Convert `(control_freq, range)` into a divider value **N**.
 
-### Logic
+#### Logic
 
 * `control_freq` selects powers of two:
 
@@ -77,13 +77,13 @@ N = 2^(control_freq) × (1 or 1000)
 
 ---
 
-## Block 2: Counter
+### Block 2: Counter
 
-### Purpose
+#### Purpose
 
 Count clock cycles until reaching **N**.
 
-### Operation
+#### Operation
 
 * Clocked by `clk`
 * Counts from `0` → `N − 1`
@@ -94,13 +94,13 @@ Count clock cycles until reaching **N**.
 
 ---
 
-## Block 3: Toggle Flip-Flop
+### Block 3: Toggle Flip-Flop
 
-### Purpose
+#### Purpose
 
 Generate the square wave output.
 
-### Operation
+#### Operation
 
 * Toggles its state every time the counter finishes
 * Ensures a **50% duty cycle** automatically
@@ -186,7 +186,3 @@ This simulation shows the **8 frequency levels** generated when `range = 1`.
 * **ModelSim**
 
 ---
-
-
-
-```
