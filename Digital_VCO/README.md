@@ -192,7 +192,7 @@ It confirms that the design is implemented using a **counter**, **combinational
 frequency selection logic**, and a **toggle flip-flop**, all driven by a single
 clock domain.
 
-![RTL Viewer](images/rtl.png)
+![RTL Viewer](images/RTL.jpeg)
 
 ### RTL Observations
 - Fully synchronous design driven by `clk`
