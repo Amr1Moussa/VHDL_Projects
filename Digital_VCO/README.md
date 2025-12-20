@@ -7,7 +7,8 @@
 <!-- Example:
 ![Digital VCO Schematic](schematic.png)
 -->
-
+![image](![Uploading image.png…]()
+)
 ---
 
 ## Overview
