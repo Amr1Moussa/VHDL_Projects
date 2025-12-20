@@ -1,4 +1,4 @@
-# Digital Square Wave VCO (VHDL)
+# Digital Square Wave VCO 
 
 ![Digital VCO Block Diagram](images/Schematic.jpeg)
 
