@@ -53,9 +53,8 @@ Convert `(control_freq, range)` into a divider value **N**.
 
 #### Logic
 
-* `control_freq` selects powers of two:
-
-  * 2⁰, 2¹, … , 2⁷
+* `control_freq` selects using 3 bit input
+  
 * `range` scales the frequency:
 
   * `1` → kHz mode
@@ -64,7 +63,7 @@ Convert `(control_freq, range)` into a divider value **N**.
 📌 **Divider Equation**
 
 ```
-N = 2^(control_freq) × (1 or 1000)
+N = clk_freq / 2(control_freq)
 ```
 
 📌 The output of this block is the divider value **N**, which controls the counter.
