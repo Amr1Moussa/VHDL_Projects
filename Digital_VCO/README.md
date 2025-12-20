@@ -1,6 +1,6 @@
 # Digital Square Wave VCO (VHDL)
 
-![Digital VCO Block Diagram](Digital_VCO/images/Schematic.jpeg)
+![Digital VCO Block Diagram](images/Schematic.jpeg)
 ---
 
 ## Overview
