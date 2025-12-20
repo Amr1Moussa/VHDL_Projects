@@ -17,10 +17,10 @@ The design is fully synchronous and suitable for FPGA implementation.
 
 ```vhdl
 PORT (
-    clk          : in  std_logic;               -- 1 MHz clock
+    clk          : in  std_logic;                    -- 1 MHz clock
     control_freq : in  std_logic_vector(2 downto 0); -- Frequency selection
-    range        : in  std_logic;               -- 0: kHz, 1: Hz
-    vco_out      : out std_logic                -- Square wave output
+    range        : in  std_logic;                    -- 0: kHz, 1: Hz
+    vco_out      : out std_logic                     -- Square wave output
 );
 ````
 
