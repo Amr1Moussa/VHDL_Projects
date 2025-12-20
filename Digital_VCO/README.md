@@ -1,14 +1,6 @@
 # Digital Square Wave VCO (VHDL)
 
-<!-- ===================== -->
-<!--   SCHEMATIC IMAGE     -->
-<!-- ===================== -->
-<!-- Place schematic image here -->
-<!-- Example:
-![Digital VCO Schematic](schematic.png)
--->
-![image](![Uploading image.png…]()
-)
+![Digital VCO Block Diagram](Digital_VCO/images/Schematic.jpeg)
 ---
 
 ## Overview
