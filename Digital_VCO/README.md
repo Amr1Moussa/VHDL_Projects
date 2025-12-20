@@ -73,7 +73,7 @@ N = 2^(control_freq) × (1 or 1000)
 
 ## VCO Frequency Selection Table
 
-*(1 MHz Input Clock Assumed)*
+*(1 MHz Input Clock)*
 
 | Row | control_freq | range_sel | N (decimal) | vco_out Frequency | Notes                          |
 | --- | ------------ | --------- | ----------- | ----------------- | ------------------------------ |
