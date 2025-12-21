@@ -50,12 +50,18 @@ begin
         end loop;
 
         -- Test all control_freq values with range_sel = '1' (Hz)
-        for i in 0 to 7 loop
+        for i in 0 to 3 loop
             control_freq <= std_logic_vector(to_unsigned(i,3));
             range_sel <= '1';
-            wait for 5 ms; -- wait longer for low frequencies
+            wait for 20 ms; -- wait longer for low frequencies
         end loop;
 
+        for i in 4 to 7 loop
+            control_freq <= std_logic_vector(to_unsigned(i,3));
+            range_sel <= '1';
+            wait for 40 ms; -- wait longer for low frequencies
+        end loop;
+		  
         -- Stop simulation
         wait;
     end process;
