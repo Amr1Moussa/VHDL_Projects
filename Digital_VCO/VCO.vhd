@@ -29,10 +29,10 @@ begin
             when "000" => N_temp := to_unsigned(1, 32);         -- 500 kHz
             when "001" => N_temp := to_unsigned(2, 32);         -- 250 kHz
             when "010" => N_temp := to_unsigned(4, 32);         -- 125 kHz
-            when "011" => N_temp := to_unsigned(8, 32);        -- 62.5 kHz
+            when "011" => N_temp := to_unsigned(8, 32);         -- 62.5 kHz
             when "100" => N_temp := to_unsigned(16, 32);        -- 31.25 kHz
             when "101" => N_temp := to_unsigned(32, 32);        -- 15.625 kHz
-            when "110" => N_temp := to_unsigned(64, 32);       -- 7.8125 kHz
+            when "110" => N_temp := to_unsigned(64, 32);        -- 7.8125 kHz
             when "111" => N_temp := to_unsigned(128, 32);       -- 3.90625 kHz
             when others => N_temp := to_unsigned(2, 32);
         end case;
@@ -56,5 +56,6 @@ begin
             end if;
         end if;
     end process;
+
 
 end architecture;
