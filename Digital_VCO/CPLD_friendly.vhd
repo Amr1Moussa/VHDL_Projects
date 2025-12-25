@@ -7,7 +7,7 @@ entity vco is
         clk          : in  std_logic;                     -- 3.5 kHz onboard clock
         control_freq : in  std_logic_vector(2 downto 0);  -- DIP switches
         range_sel    : in  std_logic;                     -- range selector switch
-        vco_out      : out std_logic                      -- square wave output
+        vco_out      : out std_logic                      -- square wave output on LED
     );
 end entity;
 
